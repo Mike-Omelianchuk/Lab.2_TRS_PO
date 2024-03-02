@@ -49,4 +49,24 @@ public static class MatrixOperations
 
         return c;
     }
+
+    public static double[,] TransposeVector(Vector<double> v)
+    {
+        double[,] matrix = new double[v.Count, 1];
+
+        for (int i = 0; i < v.Count; i++)
+            matrix[i, 0] = v[i];
+
+        return matrix;
+    }
+
+    public static Matrix<double> MakeMatrix(Vector<double> v)
+    {
+        Matrix<double> matrix = Matrix<double>.Build.Dense(1, v.Count);
+
+        for (int i = 0; i < v.Count; i++)
+            matrix[1, i] = v[i];
+
+        return matrix;
+    }
 }

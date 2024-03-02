@@ -44,7 +44,7 @@ public static class MatrixGenerator
         return b;
     }
 
-    public static double[,] GenerateC(int n)
+    public static double[,] GenerateC2(int n)
     {
         var C = new double[n, n];
 

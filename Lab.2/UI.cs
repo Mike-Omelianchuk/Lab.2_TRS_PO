@@ -8,7 +8,7 @@ using System.Transactions;
 
 namespace Lab_2_UI;
 
-internal class UI
+public class UI
 {
     static StreamWriter sw = new StreamWriter(Console.OpenStandardOutput(), bufferSize: 160000);
 
@@ -108,7 +108,7 @@ internal class UI
         {
             foreach (double el in v)
             {
-                sw.Write(string.Format("{0:0.000}", el) + "\t");
+                sw.Write(string.Format("{0:0e+0}", el) + "  ");
             }
             sw.Write('\n');
         }
@@ -117,11 +117,12 @@ internal class UI
         sw.Flush();
     }
 
-    static public void AddMatrixToScreen(Vector<double> vector)
+    static public void AddMatrixToScreen(Vector<double>? vector)
     {
         foreach (var el in vector)
-            sw.Write(string.Format("{0:0.000}", el) + "\t");
+            sw.Write(string.Format("{0:0.000}", el) + " ");
 
+        sw.Write("\n");
         sw.Write("\n");
         sw.Flush();
     }
